@@ -28,12 +28,12 @@ namespace LINQ_Practice_Intro
             Console.WriteLine($"The second string when ordered in reverse alphabetical order: {stringList}.");
 
             // Operating on nestedList: 
-            Console.WriteLine($"The overall largest number across all lists: {nestedList.Distinct()}.");
-            Console.WriteLine($"The number of nested lists: {nestedList}.");
+            Console.WriteLine($"The overall largest number across all lists: {nestedList.ToList().Select((c, i) => i).Max()}.");
+            Console.WriteLine($"The number of nested lists: {nestedList.ToList().Count()}.");
             Console.WriteLine($"The number of items in the shortest nested list: {nestedList}.");
             Console.WriteLine($"The average of items in the longest nested list: {nestedList}.");
-            Console.WriteLine($"The number of distinct even items across all lists: {nestedList}.");
-            Console.WriteLine($"The average of distinct odd items divisible by either 3 or 5 across all lists: {nestedList}.");
+            Console.WriteLine($"The number of distinct even items across all lists: {nestedList.ToList().Where((c, i) => i % 2 == 0).Count()}.");
+            Console.WriteLine($"The average of distinct odd items divisible by either 3 or 5 across all lists: {nestedList.ToList().Where((c, i) => i % 2 == 1 && i % 3 == 0 && i % 5 == 0)}.");
 
             // Operating on personList: 
             Console.WriteLine($"The number of females in the list: {personList.Where(x => x.Gender == Person.GenderValue.Female).Count()}.");
