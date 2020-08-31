@@ -38,7 +38,7 @@ namespace LINQ_Practice_Intro
             // Operating on personList: 
             Console.WriteLine($"The number of females in the list: {personList.Where(x => x.Gender == Person.GenderValue.Female).Count()}.");
             Console.WriteLine($"The average number of characters in first names: {personList.Select(x => x.FirstName.Length).Average()}.");
-            Console.WriteLine($"The full name of the youngest person: {}.");
+            Console.WriteLine($"The full name of the youngest person: {personList}.");
             Console.WriteLine($"The first name of the person with the longest last name: {personList}.");
             Console.WriteLine($"The gender of the oldest person: {personList}.");
 
